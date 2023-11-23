@@ -1,4 +1,4 @@
-import { MESSAGE } from "./constants/Messages";
+import { MESSAGE } from "./constants/Messages.js";
 import { Console } from "@woowacourse/mission-utils";
 
 const Print = {
@@ -13,14 +13,13 @@ const Print = {
   gameResult({ strike, ball }) {
     if (strike === 0 && ball === 0) {
       Console.print(MESSAGE.NOTHING);
-    }
-    if (strike === 0) {
+    } else if (strike === 0) {
       Console.print(`${ball}${MESSAGE.BALL}`);
-    }
-    if (ball === 0) {
+    } else if (ball === 0) {
       Console.print(`${strike}${MESSAGE.STRIKE}`);
+    } else {
+      Console.print(`${ball}${MESSAGE.BALL} ${strike}${MESSAGE.STRIKE}`);
     }
-    Console.print(`${ball}${MESSAGE.BALL} ${strike}${MESSAGE.STRIKE}`);
   },
 };
 
